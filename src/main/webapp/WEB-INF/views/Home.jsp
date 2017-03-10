@@ -54,7 +54,9 @@
 		<jsp:include page="Registration.jsp"></jsp:include>
 	</c:if>
 
-
+	<c:if test="${isUserClickedCart == true}">
+	<jsp:include page="Cart.jsp"></jsp:include>
+	</c:if>
 
 
 

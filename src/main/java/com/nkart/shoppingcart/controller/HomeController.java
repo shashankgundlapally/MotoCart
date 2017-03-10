@@ -109,5 +109,15 @@ public ModelAndView showHomePage()
 		return mv;
 		
 	}
+	@RequestMapping("/cart")
+	public ModelAndView showCartPage()
+	{
+		System.out.println("clicked on cart");
+		ModelAndView mv = new ModelAndView("/Home");
+		mv.addObject("isUserClickedCart", "true");
+		
+		return mv;
+		
+	}
 		
 }
