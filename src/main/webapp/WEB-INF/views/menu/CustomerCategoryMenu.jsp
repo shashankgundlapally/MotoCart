@@ -94,7 +94,7 @@
 				</c:if>
 
 			</div>
-			<br>
+			
 			<div>
 				<c:if test="${not empty loginMessage}">
 					<ul class="nav navbar-nav navbar-right">
