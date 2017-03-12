@@ -8,17 +8,7 @@
 <title>This is Admin Page</title>
 </head>
 <body>
-	<!-- 
-	<center>
-		<h2>Welcome Admin</h2>
-	</center>
-	<hr>
-	
-	<a href="Categories">Categories</a>
-	<br>
-	<a href="Products">Products</a>
-	<br>
-	<a href="Suppliers">Suppliers</a> -->
+
 	<c:if test="${isUserClickedAdminHome==true}">
 	<center>
 		<h2>NKART</h2>

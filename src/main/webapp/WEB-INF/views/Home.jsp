@@ -14,25 +14,25 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <body>
+<img src="<c:url value="../../../resources/Images/custom-shopping-cart.png"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left">
 	<center>
-		<h2>NKART</h2>
-		<h3>hello this is home page</h3>
+		<h2 style="color:green; font-family: fantasy;" >NKART</h2>
+		<h3 style="color:red;font-family:cursive;">Shopping is an art</h3>
+		 
 
-		${successMessage}<br>${role}<br> ${errorMessage}<br>
-		${loginMessage}
+		<%-- ${successMessage}<br> --%>
+		${role}<br> ${errorMessage}<br>
+		
 	</center>
 	<hr>
 	<c:if test="${isAdmin!=true}">
 		<jsp:include page="menu/CustomerCategoryMenu.jsp"></jsp:include>
 	</c:if>
 
-
-	<%-- <c:if test="${isAdmin==true}">
-		<jsp:include page="Admin/AdminHome.jsp"></jsp:include>
-	</c:if> --%>
 	<c:if test="${isAdmin==true}">
 		<center>
 			<h2>Hello Admin</h2>
+		
 		</center>
 		<jsp:include page="Admin/AdminHome.jsp"></jsp:include>
 		<jsp:include page="menu/AdminCategoryMenu.jsp"></jsp:include>
@@ -60,14 +60,5 @@
 
 
 
-	<!-- <script>
-		$(document).ready(function() {
-			$('.dropdown-submenu a.test').on("click", function(e) {
-				$(this).next('ul').toggle();
-				e.stopPropagation();
-				e.preventDefault();
-			});
-		});
-	</script> -->
 </body>
 </html>

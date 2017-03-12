@@ -10,18 +10,24 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin Category</title>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header"></div>
+    <div class="navbar-header">
     <ul class="nav navbar-nav">
       <li><a href="AdminHome"> <span class="glyphicon glyphicon-home"></span>AdminHome</a></li>
       <li><a href="Categories">Categories</a></li>
       <li><a href="Products">Products</a></li>
       <li><a href="Suppliers">Suppliers</a></li>
       </ul>
+      </div>
+    
+			<div>
+			<p style="color:white" align="center">${loginMessage}</p>
+			</div>
+     
       <div>
       <c:if test="${not empty loginMessage}">
 	<ul class="nav navbar-nav navbar-right">

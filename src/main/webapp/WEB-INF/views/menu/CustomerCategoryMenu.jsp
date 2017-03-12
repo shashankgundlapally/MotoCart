@@ -78,7 +78,10 @@
 					</div>
 				</div>
 			</form>
-			<br>
+			
+			<div>
+			<p style="color:white">${loginMessage}</p>
+			</div>
 			<div>
 
 				<c:if test="${empty loginMessage}">
