@@ -43,7 +43,7 @@ public class CategoryController
 		return mv;
 	}
 	
-	@GetMapping("/Delete_Category/{id}")
+	@GetMapping("/Delete_Category/{Category ID}")
 	public ModelAndView deleteCategory(@PathVariable("Category ID")String id)
 	{
 		category.setId(id);
@@ -59,4 +59,22 @@ public class CategoryController
 		}
 		return mv;
 	}
+	
+	@GetMapping("/Edit_Category/{Category ID}")
+	public ModelAndView editCategory(@PathVariable("Category ID") String id)
+	{
+		category.setId(id);
+		ModelAndView mv = new ModelAndView("/Admin/AdminHome");
+		if(categoryDAO.updateCategory(category))
+		{
+			mv.addObject("message", "successfully updated category ");
+		}
+		else
+		{
+			mv.addObject("message", "can't update category!");
+		}
+		return mv;
+	}
+	
+	
 }

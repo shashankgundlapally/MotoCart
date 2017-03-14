@@ -35,8 +35,8 @@
 					<td>${category.id}</td>
 					<td>${category.name}</td>
 					<td>${category.description}</td>
-					<td> <a href="Edit_Category">Edit </a>||
-					 <a href="Delete_Category/78">Delete</a></td>
+					<td> <a href="<c:url value='/Edit_Category/${category.id}'/>">Edit </a>||
+					 <a href="<c:url value='/Delete_Category/${category.id}'/>">Delete</a></td>
 				</tr>
 
 			</c:forEach>

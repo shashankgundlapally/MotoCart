@@ -14,7 +14,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <body>
-<img src="<c:url value="../../../resources/Images/custom-shopping-cart.png"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left">
+
+<img src="<c:url value="../../../resources/Images/ecommerce.jpg.jpg"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left"> 
 	<center>
 		<h2 style="color:green; font-family: fantasy;" >NKART</h2>
 		<h3 style="color:red;font-family:cursive;">Shopping is an art</h3>

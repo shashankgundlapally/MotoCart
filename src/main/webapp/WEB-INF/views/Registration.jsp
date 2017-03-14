@@ -11,7 +11,7 @@
 <center>
 
 <h2>This is Registration Page</h2>
-<form action="">
+<form action="/create_user" method="post">
 
 USER ID:<input type ="text" name = "userID"><br>
 PASSWORD:<input type ="password" name ="password"><br>
