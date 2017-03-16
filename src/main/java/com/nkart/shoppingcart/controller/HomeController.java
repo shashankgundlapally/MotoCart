@@ -9,7 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.nkart.shoppingcart.dao.CategoryDAO;
+import com.nkart.shoppingcart.dao.ProductDAO;
+import com.nkart.shoppingcart.dao.SupplierDAO;
 import com.nkart.shoppingcart.dao.UserDAO;
+import com.nkart.shoppingcart.domain.Category;
+import com.nkart.shoppingcart.domain.Product;
+import com.nkart.shoppingcart.domain.Supplier;
 import com.nkart.shoppingcart.domain.User;
 
 @Controller
@@ -20,6 +26,23 @@ public class HomeController
 	
 	@Autowired
 	private User user;
+	
+	@Autowired
+	private CategoryDAO categoryDAO;
+	@Autowired
+	private SupplierDAO supplierDAO;
+	@Autowired
+	private ProductDAO productDAO;
+	
+	@Autowired
+	private Category category;
+	@Autowired
+	private Product product;
+	@Autowired
+	private Supplier supplier;
+	
+	
+	
 	
 	@Autowired
 	private HttpSession session;
@@ -33,6 +56,7 @@ public ModelAndView showHomePage()
 		
 		//specifying which page to navigate
 	ModelAndView mv = new ModelAndView("/Home");
+	/*session.setAttribute("category", arg1);*/
 	
 	//specify what data you have to carry to home page
 	mv.addObject("msg", "WELCOME TO NKART");

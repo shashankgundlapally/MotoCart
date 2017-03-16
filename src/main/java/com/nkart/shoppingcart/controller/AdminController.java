@@ -32,7 +32,7 @@ public class AdminController
 	Product product;
 	
 	//define 3 methods
-	@RequestMapping("/Categories")
+	@RequestMapping("/Category")
 	public ModelAndView manageCategories()
 	{
 		ModelAndView mv = new ModelAndView("/Admin/AdminHome");
@@ -40,11 +40,11 @@ public class AdminController
 		
 		//get the categories from DB
 		
-		List<Category> categoryList = categoryDAO.getAllCategories();
+		List<Category> categoryList = categoryDAO.list();
 		mv.addObject("categoryList", categoryList);
 		// to access category domain object in category.jsp
-		mv.addObject("category",category);
-		System.err.println("Check Error: "+mv);
+		mv.addObject("Category",category);
+	
 		
 		return mv;
 	}

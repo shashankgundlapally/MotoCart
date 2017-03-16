@@ -17,8 +17,8 @@
   <div class="container-fluid">
     <div class="navbar-header">
     <ul class="nav navbar-nav">
-      <li><a href="AdminHome"> <span class="glyphicon glyphicon-home"></span>AdminHome</a></li>
-      <li><a href="Categories">Categories</a></li>
+      <li><a href="AdminHome"> <span class="glyphicon glyphicon-home"></span>Home</a></li>
+      <li><a href="Category">Categories</a></li>
       <li><a href="Products">Products</a></li>
       <li><a href="Suppliers">Suppliers</a></li>
       </ul>
@@ -28,7 +28,7 @@
 			<p style="color:white" align="center">${loginMessage}</p>
 			</div>
      
-      <div>
+      <div> 
       <c:if test="${not empty loginMessage}">
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href="Logout"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
