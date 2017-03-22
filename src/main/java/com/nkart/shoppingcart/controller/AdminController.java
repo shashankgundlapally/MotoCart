@@ -32,7 +32,7 @@ public class AdminController
 	Product product;
 	
 	//define 3 methods
-	@RequestMapping("/Category")
+	@RequestMapping("/manage_Category")
 	public ModelAndView manageCategories()
 	{
 		ModelAndView mv = new ModelAndView("/Admin/AdminHome");
@@ -40,7 +40,7 @@ public class AdminController
 		
 		//get the categories from DB
 		
-		List<Category> categoryList = categoryDAO.list();
+		List<Category> categoryList = categoryDAO.getAllCategories();
 		mv.addObject("categoryList", categoryList);
 		// to access category domain object in category.jsp
 		mv.addObject("Category",category);
@@ -49,7 +49,7 @@ public class AdminController
 		return mv;
 	}
 	
-	@RequestMapping("/Products")
+	@RequestMapping("/manage_Products")
 	public ModelAndView manageProducts()
 	{
 		ModelAndView mv = new ModelAndView("/Admin/AdminHome");
@@ -63,7 +63,7 @@ public class AdminController
 		return mv;
 	}
 	
-	@RequestMapping("/Suppliers")
+	@RequestMapping("/manage_Suppliers")
 	public ModelAndView manageSuppliers()
 	{
 		ModelAndView mv = new ModelAndView("/Admin/AdminHome");

@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <title>Bootstrap Case</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -91,37 +92,43 @@
 			</div>
 			<div>
 
-				<c:if test="${empty loginMessage}">
-
-					<ul class="nav navbar-nav navbar-right">
+				<%-- <c:if test="${empty loginMessage}"> --%>
+                  <% out.println("isAuthenticated()"); %>      
+                     			<ul class="nav navbar-nav navbar-right">
+					<sec:authorize access="!isAuthenticated()">
+					
 						<li><a href="Login"><span
 								class="glyphicon glyphicon-log-in"></span> Login</a></li>
 						<li><a href="Registration"><span
 								class="glyphicon glyphicon-user"></span> Register</a></li>
+								  </sec:authorize>
 					</ul>
 
 
-				</c:if>
+			<%-- 	</c:if> --%>
 
 			</div>
 			
 			<div>
-				<c:if test="${not empty loginMessage}">
+			 
+				<%-- <c:if test="${not empty loginMessage}"> --%>
 					<ul class="nav navbar-nav navbar-right">
+					<sec:authorize access="isAuthenticated()">
 						<li><a href="Logout"><span
 								class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-					</ul>
-				</c:if>
+				
+				<%-- </c:if> --%>
 
-				<c:if test="${isAdmin==false}">
-					<ul class="nav navbar-nav navbar-right">
+				<%-- <c:if test="${isAdmin==false}"> --%>
+					<li class="nav navbar-nav navbar-right">
 						<li><a href="cart"><span
 								class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-					</ul>
+					</li>
+					</sec:authorize>
+	</ul>
 
 
-
-				</c:if>
+		<%-- 		</c:if> --%>
 
 
 			</div>

@@ -101,7 +101,7 @@ body  {
 		<h2>Enter Category Details</h2>
 
 
-		<form action="create_category" method="post">
+		<form action="manage_create_category" method="post">
 			<table>
 				<tr>
 					<td>CATEGORY ID:</td>
@@ -147,8 +147,8 @@ body  {
 					<td>${category.name}</td>
 					<td>${category.description}</td>
 					 
-					<td><a href="Edit_Category/${category.id}">Edit </a>|| <a
-						href="Delete_Category/${category.id}">Delete</a></td>
+					<td><a href="manage_Edit_Category/${category.id}">Edit </a>|| <a
+						href="manage_Delete_Category/${category.id}">Delete</a></td>
 				</tr>
 				
 

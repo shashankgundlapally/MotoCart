@@ -7,27 +7,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>NKART Home Page</title>
-<style>
-body {
-    background-color: lightblue;
-}
-</style>
-<style>
-body {
-    background-image: url("/resources/Images/background-1.jpg");
-}
-</style>
+
+
 </head>
  <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 	<link rel="stylesheet" href="<c:url value="/resources/Styles/Home.css"/>">
-<script
+ <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <body>
-
-<img src="<c:url value="/resources/Images/custom-shopping-cart.png"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left"> 
+<script>
+document.body.style.backgroundImage="url('resources/Images/matrix4.jpg')"
+</script>
+<center>
+<img class="img-circle"  src="<c:url value="/resources/Images/background-5.jpg"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left" > 
+	</center>
+	<div  style="background-color: white;">
 	<center>
 		<h2 style="color:green; font-family: fantasy;" >NKART</h2>
 		<h3 style="color:red;font-family:cursive;">Shopping is an art</h3>
@@ -37,6 +34,7 @@ body {
 		${role}<br> ${errorMessage}<br>
 		
 	</center>
+	</div>
 	<hr>
 	<c:if test="${isAdmin!=true}">
 		<jsp:include page="menu/CustomerCategoryMenu.jsp"></jsp:include>

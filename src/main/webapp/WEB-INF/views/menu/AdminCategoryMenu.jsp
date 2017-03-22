@@ -18,9 +18,9 @@
     <div class="navbar-header">
     <ul class="nav navbar-nav">
       <li><a href="AdminHome"> <span class="glyphicon glyphicon-home"></span>Home</a></li>
-      <li><a href="Category">Categories</a></li>
-      <li><a href="Products">Products</a></li>
-      <li><a href="Suppliers">Suppliers</a></li>
+      <li><a href="manage_Category">Categories</a></li>
+      <li><a href="manage_Products">Products</a></li>
+      <li><a href="manage_Suppliers">Suppliers</a></li>
       </ul>
       </div>
     

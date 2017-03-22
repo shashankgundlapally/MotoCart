@@ -51,11 +51,22 @@ public class HomeController
 	
 	//Navigating to a specific page statically
 	@RequestMapping("/")
-public ModelAndView showHomePage()
+public ModelAndView onLoad()
 {
 		
 		//specifying which page to navigate
 	ModelAndView mv = new ModelAndView("/Home");
+	
+	session.setAttribute("category", category); // domain object names
+	session.setAttribute("product", product);
+	session.setAttribute("supplier", supplier);
+	
+	
+	session.setAttribute("categoryList", categoryDAO.getAllCategories());
+	
+	session.setAttribute("supplierList", supplierDAO.getAllSuppliers());
+	
+	session.setAttribute("productList", productDAO.getAllProducts());
 	/*session.setAttribute("category", arg1);*/
 	
 	//specify what data you have to carry to home page
@@ -89,10 +100,11 @@ public ModelAndView showHomePage()
 	
 	
 	//@RequestMapping("/validate")  //used for get method
-	@PostMapping("/validate")  //used for post method
-	public ModelAndView validateCredentials(@RequestParam("userID") String id,@RequestParam("password") String pwd)
+/*	@PostMapping("/validate")  //used for post method
+	public ModelAndView validateCredentials(@RequestParam("userID") String id,@RequestParam("password") String password)
 	{
 		ModelAndView mv = new ModelAndView("/Home");
+		user = userDAO.validate(id, pwd);  //you no need to do this step if you are using spring security
 		mv.addObject("isUserLoggedIn", "false");
 		if(userDAO.validate(id, pwd)==true)
 		{
@@ -116,6 +128,64 @@ public ModelAndView showHomePage()
 		}
 		return mv;
 	}
+	
+	
+@RequestMapping(value = "/validate", method = RequestMethod.POST)
+	public ModelAndView validate(@RequestParam(value = "username") String userID,
+			@RequestParam(value = "password") String password) {
+		log.debug("Starting of the method validate");
+
+		// ModelAndView mv = new ModelAndView("/home");
+		ModelAndView mv = new ModelAndView("/home");
+		user = userDAO.isValidUser(userID, password);  //you no need to do this step 
+											//if you are using spring security
+		// if the record exist with this userID and password it will return user
+		// details else will return null
+
+		if (user != null) {
+			log.debug("Valid Credentials");
+			
+			session.setAttribute("loggedInUser", user.getName());
+			session.setAttribute("loggedInUserID", user.getId());
+
+			session.setAttribute("user", user); //
+			session.setAttribute("supplier", supplier);
+			session.setAttribute("supplierList", supplierDAO.list());
+			
+			session.setAttribute("productList", productDAO.list());
+			session.setAttribute("product", product);
+
+			session.setAttribute("category", category);
+			session.setAttribute("categoryList", categoryDAO.list());
+
+			if (user.getRole().equals("ROLE_ADMIN")) {
+				log.debug("Logged in as Admin");
+				mv.addObject("isAdmin", "true");
+				
+
+			} else {
+				log.debug("Logged in as User");
+				mv.addObject("isAdmin", "false");
+				//myCart = cartDAO.list(userID);
+				mv.addObject("myCart", myCart);
+				// Fetch the myCart list based on user ID
+				List<MyCart> cartList = cartDAO.list(userID);
+				mv.addObject("cartList", cartList);
+				mv.addObject("cartSize", cartList.size());
+			}
+
+		} else {
+			log.debug("Invalid Credentials");
+
+			mv.addObject("invalidCredentials", "true");
+			mv.addObject("errorMessage", "Invalid Credentials");
+			
+			// ${errorMessage}
+
+		}
+		log.debug("Ending of the method validate");
+		return mv;
+	}*/
 	@RequestMapping("/Logout")
 	public ModelAndView Logout()
 	{

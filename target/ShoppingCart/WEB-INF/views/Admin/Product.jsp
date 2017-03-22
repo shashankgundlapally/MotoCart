@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,24 +8,36 @@
 <title>Product Page</title>
 </head>
 <body>
-<center>
-<h2>Enter Product Details</h2>
-PRODUCT ID:<input type ="text" name = "Product ID"><br>
-PRODUCT NAME:<input type="text" name="Product Name"><br>
-PRICE:<input type="text" name="Price"><br>
-CATEGORY ID:<input type ="option" name = "Category ID">
-<select>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-</select>
-<br>
-SUPPLIER ID:<input  list ="down" type ="text" name = "Supplier ID"><br>
-<input type ="submit" value="Submit">
-<input type ="Reset" value="reset">
-</center>
+	<center>
+		<h2>Enter Product Details</h2>
+		<table>
+			<tr>
+				<td>PRODUCT ID:</td>
+				<td><input type="text" name="Product ID"></td>
+			</tr>
+			<tr>
+				<td>PRODUCT NAME:</td>
+				<td><input type="text" name="Product Name"></td>
+			</tr>
+			<tr>
+				<td>PRICE:</td>
+				<td><input type="text" name="Price"></td>
+			</tr>
+			<tr>
+				<td>CATEGORY ID:</td>
+				<td><input type="text" name="Category ID"></td>
+			</tr>
 
-<center>
+			<tr>
+				<td>SUPPLIER ID:</td>
+				<td><input type="text" name="Supplier ID"></td>
+			</tr>
+		</table>
+		<input type="submit" value="Submit"> <input type="Reset"
+			value="reset">
+	</center>
+
+	<center>
 		<h2>products</h2>
 		<table border="2">
 			<thead>

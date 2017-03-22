@@ -30,13 +30,14 @@ public class CategoryController
 	
 	//CRUD operations
 	
-	@PostMapping("/create_category")
-	public String createCategory(@RequestParam("id")String id,@RequestParam("name") String name,@RequestParam("description")String description)
+	@PostMapping("/manage_create_category")
+	public String createCategory(@RequestParam("id")String id,@RequestParam("name") String name,@RequestParam("description")String description, Model model)
 	{
 		category.setId(id);
 		category.setName(name);
 		category.setDescription(description);
 		categoryDAO.createCategory(category);
+		
 		
 		/*ModelAndView mv = new ModelAndView("forward:/Category");
 		if (categoryDAO.createCategory(category))
@@ -47,7 +48,10 @@ public class CategoryController
 		{
 			mv.addObject("message", "not able to create category!! contact Admin");
 		}*/
-		return "redirect:/Category";
+		model.addAttribute("category", category);
+		model.addAttribute("categoryList", categoryDAO.getAllCategories());
+		model.addAttribute("isAdminClickedCategories", "true");
+		return "redirect:/manage_Category";
 	}
 	/*@RequestMapping(value="/Category")
 	public ModelAndView getAllData(@ModelAttribute("category")Category category,BindingResult result,Model model)
@@ -58,7 +62,7 @@ public class CategoryController
 		return mv;
 	}*/
 	
-	@GetMapping("/Delete_Category/{id}")
+	@GetMapping("/manage_Delete_Category/{id}")
 	public String deleteCategory(@PathVariable("id")String id)
 	{
 		category.setId(id);
@@ -74,11 +78,11 @@ public class CategoryController
 		{
 			mv.addObject("message", "category not deleted");
 		}*/
-		return "redirect:/Category";
+		return "redirect:/manage_Category";
 		
 	}
 	
-	@GetMapping("/Edit_Category/{id}")
+	@GetMapping("/manage_Edit_Category/{id}")
 	public String editCategory(@PathVariable("id") String id,RedirectAttributes attributes)
 	{
 		category.setId(id);
@@ -93,7 +97,7 @@ public class CategoryController
 		{
 			mv.addObject("message", "can't update category!");
 		}*/
-		return "redirect:/Category";
+		return "redirect:/manage_Category";
 	}
 	
 	

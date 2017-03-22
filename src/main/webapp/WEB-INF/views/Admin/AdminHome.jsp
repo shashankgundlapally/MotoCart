@@ -13,11 +13,15 @@ body {
 </style>
 </head>
 <body>
+<script>
+document.body.style.backgroundImage="url('resources/Images/blue_background.jpg')"
+</script>
+<img class="img-circle"  src="<c:url value="/resources/Images/background-5.jpg"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left" > 
 <center>
-	<img src="<c:url value="/resources/Images/custom-shopping-cart.png"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left"><br>
+	<%-- <img src="<c:url value="/resources/Images/custom-shopping-cart.png"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left"><br> --%>
 		<h2 style="color:green; font-family: fantasy;">NKART</h2>
 		<h3 style="color:red;font-family:cursive;">Shopping is an art</h3>
-		</center>
+		</center><br>
 
 	<c:if test="${isUserClickedAdminHome==true}">
 	
