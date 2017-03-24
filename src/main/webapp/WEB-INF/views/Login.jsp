@@ -16,9 +16,9 @@
 <div>
 <h2>This is Login Page</h2>
 
- <form action="validate" method="post">
-<tr><td>USER ID:</td><td><input type ="text" name = "name" placeholder="User ID" ></td></tr>
-<tr><td>PASSWORD:</td><td><input type ="password" name ="password" placeholder="Password"></td></tr>
+ <form action="perform_login" method="post">
+<tr><td>USER ID:</td><td><input type ="text" name = "j_username" placeholder="User ID" ></td></tr>
+<tr><td>PASSWORD:</td><td><input type ="password" name ="j_password" placeholder="Password"></td></tr>
 <tr><td>LOGIN:<input type ="submit" value="Login"></td><td>&nbsp;&nbsp;&nbsp;&nbsp;RESET:<input type ="Reset" value="reset"></td></tr>
 
  </form>

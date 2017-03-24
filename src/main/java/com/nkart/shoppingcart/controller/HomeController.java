@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,6 +42,7 @@ public class HomeController
 	@Autowired
 	private Supplier supplier;
 	
+
 	
 	
 	
@@ -60,6 +62,7 @@ public ModelAndView onLoad()
 	session.setAttribute("category", category); // domain object names
 	session.setAttribute("product", product);
 	session.setAttribute("supplier", supplier);
+	session.setAttribute("user", user);
 	
 	
 	session.setAttribute("categoryList", categoryDAO.getAllCategories());
@@ -81,6 +84,7 @@ public ModelAndView onLoad()
 	{
 		System.out.println("clicked on login");
 		ModelAndView mv = new ModelAndView("/Home");
+		mv.addObject("user", user);
 		mv.addObject("isUserClickedLogin", "true");
 		return mv;
 		
@@ -89,12 +93,13 @@ public ModelAndView onLoad()
 	
 	
 	@RequestMapping("/Registration")
-	public ModelAndView showRegisterPage()
+	public String showRegisterPage(Model model)
 	{
 		System.out.println("clicked on Reg");
-		ModelAndView mv =new ModelAndView("/Home");
-		mv.addObject("isUserClickedRegister", "true");
-		return mv;
+		model.addAttribute("user",user);
+	/*	ModelAndView mv =new ModelAndView("/Home");*/
+		/*mv.addObject("isUserClickedRegister", "true");*/
+		return "Registration";
 		
 	}
 	

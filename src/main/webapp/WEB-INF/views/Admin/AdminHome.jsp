@@ -32,18 +32,18 @@ document.body.style.backgroundImage="url('resources/Images/blue_background.jpg')
 <jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include>
 </c:if> --%>
 	<c:if test="${isUserClickedCategories==true}">
-	<jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include>
+<%-- 	<jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include> --%>
 		<jsp:include page="Category.jsp"></jsp:include>
 	</c:if>
 
 	<c:if test="${isUserClickedProducts==true}">
-	<jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include>
+	<%-- <jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include> --%>
 		<jsp:include page="Product.jsp"></jsp:include>
 	</c:if>
 
 	<c:if test="${isUserClickedSuppliers==true}">
-	<jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include>
-		<jsp:include page="Supplier.jsp"></jsp:include>
+<%-- 	<jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include>
+ --%>		<jsp:include page="Supplier.jsp"></jsp:include>
 	</c:if>
 
 	

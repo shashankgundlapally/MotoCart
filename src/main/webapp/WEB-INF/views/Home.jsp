@@ -30,7 +30,7 @@ document.body.style.backgroundImage="url('resources/Images/matrix4.jpg')"
 		<h3 style="color:red;font-family:cursive;">Shopping is an art</h3>
 		 
 
-		<%-- ${successMessage}<br> --%>
+		 ${successMessage}<br> 
 		${role}<br> ${errorMessage}<br>
 		
 	</center>
@@ -49,7 +49,7 @@ document.body.style.backgroundImage="url('resources/Images/matrix4.jpg')"
 		<jsp:include page="menu/AdminCategoryMenu.jsp"></jsp:include>
 	</c:if>
 
-	<c:if test="${isUserClickedLogin==true}">
+	<c:if test="${isUserClickedLogin}">
 		<jsp:include page="Login.jsp"></jsp:include>
 		<br>
 	</c:if>

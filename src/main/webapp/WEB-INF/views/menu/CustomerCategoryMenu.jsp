@@ -97,11 +97,9 @@
                      			<ul class="nav navbar-nav navbar-right">
 					<sec:authorize access="!isAuthenticated()">
 					
-						<li><a href="Login"><span
-								class="glyphicon glyphicon-log-in"></span> Login</a></li>
-						<li><a href="Registration"><span
-								class="glyphicon glyphicon-user"></span> Register</a></li>
-								  </sec:authorize>
+						<li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li><a href="Registration"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+					 </sec:authorize>
 					</ul>
 
 
@@ -114,15 +112,14 @@
 				<%-- <c:if test="${not empty loginMessage}"> --%>
 					<ul class="nav navbar-nav navbar-right">
 					<sec:authorize access="isAuthenticated()">
-						<li><a href="Logout"><span
+						<li><a href="perform_logout"><span
 								class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 				
 				<%-- </c:if> --%>
 
 				<%-- <c:if test="${isAdmin==false}"> --%>
 					<li class="nav navbar-nav navbar-right">
-						<li><a href="cart"><span
-								class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+						<li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 					</li>
 					</sec:authorize>
 	</ul>

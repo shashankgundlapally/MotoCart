@@ -68,6 +68,7 @@ public class UserController
 	
 	@Autowired
 	private Product product;
+	
 
 	
 	@Autowired
@@ -154,24 +155,26 @@ public class UserController
 		
 	    log.debug("Ending of the method logout");
 		return mv;
-	}
+	}*/
 
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ModelAndView registerUser(@ModelAttribute User user) {
+	@RequestMapping(value = "/create_user", method = RequestMethod.POST)
+	public String registerUser(@ModelAttribute User user,Model model) {
 		log.debug("Starting of the method registerUser");
-		ModelAndView mv = new ModelAndView("home");
+		/* ModelAndView mv = new ModelAndView("Home");*/
 		if (userDAO.getUserById(user.getId()) == null) {
-			user.setRole("user"); // all the users are end users by default
+			user.setRole("ROLE_USER"); // all the users are end users by default
 			userDAO.createUser(user);
 			log.debug("You are successfully register");
-			mv.addObject("successMessage", "You are successfully registered");
+			model.addAttribute("successMessage", "You are successfully registered");
+			/*mv.addObject("successMessage", "You are successfully registered");*/
 		} else {
 			log.debug("User exist with this id");
-			mv.addObject("errorMessage", "User exist with this id");
+			model.addAttribute("errorMessage", "User exist with this id");
+			/*mv.addObject("errorMessage", "User exist with this id");*/
 		}
 		log.debug("Ending of the method registerUser");
-		return mv;
-	}*/
+		return "/Home";
+	}
 
 	//authentication-failure-forward-url="/loginError"
 	/*@RequestMapping(value = "/loginError", method = RequestMethod.GET)

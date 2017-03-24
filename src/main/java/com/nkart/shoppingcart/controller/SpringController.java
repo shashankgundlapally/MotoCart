@@ -31,6 +31,8 @@ import com.nkart.shoppingcart.domain.Product;
 import com.nkart.shoppingcart.domain.Supplier;
 import com.nkart.shoppingcart.domain.User;
 
+import jdk.nashorn.internal.ir.RuntimeNode.Request;
+
 @Controller
 public class SpringController {
 
@@ -121,19 +123,22 @@ public class SpringController {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/validate")
+	@RequestMapping("/login_session_attributes")
 	public String login_session_attributes(HttpSession session,Model model) {
+		
+		log.info("Starting of the method loggin...!");
 		System.err.println("validate function....................!");
 		
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		System.err.println(username);
 		User user = userDAO.getUserByName(username);
+		System.err.println(user.getId());
 		session.setAttribute("userid", user.getId());
 		session.setAttribute("name", user.getName());
 		session.setAttribute("LoggedIn", "true");
 
 		Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
-		String role="user";
+		String role="ROLE_USER";
 		for (GrantedAuthority authority : authorities) 
 		{
 		  
@@ -145,10 +150,10 @@ public class SpringController {
 		     }
 		     else 
 		     {
-		    	 session.setAttribute("Administrator", "true");
+		    	 session.setAttribute("isUserClickedAdminHome", "true");
 		    	model.addAttribute("product",  new Product());
 		    	 
-			 return "/Admin";
+			 return "/Admin/AdminHome";
 		     }
 	}
 		return "/Home";
@@ -182,10 +187,10 @@ public class SpringController {
 		return mv;
 	}*/
 
-	@RequestMapping("/secure_logout")
+	@RequestMapping("/perform_logout")
 	public ModelAndView secureLogout() {
 		// what you attach to session at the time login need to remove.
-
+        System.out.println("i am in ogout");
 		session.invalidate();
 
 		ModelAndView mv = new ModelAndView("Home");

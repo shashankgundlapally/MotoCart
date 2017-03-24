@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,11 +30,13 @@
 			</div>
      
       <div> 
-      <c:if test="${not empty loginMessage}">
+      
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href="Logout"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+	<sec:authorize access="isAuthenticated()">
+		<li><a href="perform_logout"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+		</sec:authorize>
 	</ul>
-	</c:if>
+	
 	</div>
     
   </div>
