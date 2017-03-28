@@ -2,6 +2,7 @@ package com.nkart.shoppingcart.controller;
 
 import java.util.Collection;
 import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -17,14 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nkart.shoppingcart.dao.CartDAO;
-import com.nkart.shoppingcart.dao.CategoryDAO;
-import com.nkart.shoppingcart.dao.ProductDAO;
-import com.nkart.shoppingcart.dao.SupplierDAO;
 import com.nkart.shoppingcart.dao.UserDAO;
 import com.nkart.shoppingcart.domain.Cart;
-import com.nkart.shoppingcart.domain.Category;
 import com.nkart.shoppingcart.domain.Product;
-import com.nkart.shoppingcart.domain.Supplier;
 import com.nkart.shoppingcart.domain.User;
 
 @Controller
@@ -44,25 +40,6 @@ public class SpringController {
 	@Autowired
 	private HttpSession session;
 
-	@Autowired
-	private CategoryDAO categoryDAO;
-
-	@Autowired
-	private Category category;
-
-	@Autowired
-	private SupplierDAO supplierDAO;
-
-	@Autowired
-	private Supplier supplier;
-
-	@Autowired
-	private Product product;
-
-	@Autowired
-	private ProductDAO productDAO;
-
-	
 	private Authentication auth;
 	
 	
@@ -74,7 +51,7 @@ public class SpringController {
 		model.addAttribute("errorMessage", "Invalid Credentials.  Please try again.");
 		model.addAttribute("invalidCredentials", "true");
 		log.debug("Ending of the method loginError");
-		return "Home";
+		return "Login";
 
 	}
 

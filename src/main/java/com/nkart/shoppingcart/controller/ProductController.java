@@ -46,7 +46,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("/manage_Delete_Product/{id}")
-	public String deleteProduct(@PathVariable("id") String id, Model model) throws Exception {
+	public String deleteProduct(@PathVariable("id") int id, Model model) throws Exception {
 		log.debug("Starting of the method deleteProduct");
 		product.setId(id);
 		boolean flag = productDAO.deleteProduct(product);
@@ -63,17 +63,9 @@ public class ProductController {
 	}
 
 	@GetMapping("/manage_Edit_Product/{id}")
-	public String editProduct(@PathVariable("id") String id, Model model,RedirectAttributes attributes) {
+	public String editProduct(@PathVariable("id") int id, Model model,RedirectAttributes attributes) {
 		log.debug("Starting of the method editProduct");
-
-		productDAO.updateProduct(product);
-		product = productDAO.getProductById(id);
-
-		/*model.addAttribute("product", product);*/
-		attributes.addFlashAttribute("product", product);
-		model.addAttribute("product",product);
-		System.err.println("---------------------"+product.getName().hashCode());
-		System.err.println("---------------------"+product.getPrice());
+		attributes.addFlashAttribute("product", this.productDAO.getProductById(id));
 		log.debug("Ending of the method editProduct");
 		return "redirect:/manage_ProductsEdit";
 	}

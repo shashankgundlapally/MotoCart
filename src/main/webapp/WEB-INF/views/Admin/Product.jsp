@@ -15,10 +15,10 @@ ${Message}
 		<h2>Enter Product Details</h2>
 		
 	
-	<c:if test="${empty product.id}">
+	<c:if test="${empty product.name}">
 		<c:url var="addAction" value="/manage_create_product"></c:url>
 		</c:if>
-		<c:if test="${!empty product.id}">
+		<c:if test="${!empty product.name}">
 		<c:url var="addAction" value="/manage_Update_product"></c:url>
 		</c:if>
 
@@ -33,10 +33,10 @@ ${Message}
 
 	<c:choose>
 	<c:when test="${not empty product.id} ">
-	<td><form:input path="id"  readonly="true" /></td>
+	<td><form:hidden path="id"  readonly="true" /></td>
 	</c:when>
 	<c:otherwise>
-	<td><form:input path="id" pattern=".{5,20}" required="true" title="id should contain 5 to 20 characters" /></td>
+	<td><form:hidden path="id" pattern=".{5,20}" required="true" title="id should contain 5 to 20 characters" /></td>
 	</c:otherwise>
 	</c:choose>
 

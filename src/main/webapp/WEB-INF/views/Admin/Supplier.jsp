@@ -14,10 +14,10 @@
 		<h2>Enter Supplier Details</h2>
 		
 		
-		<c:if test="${empty supplier.id}">
+		<c:if test="${empty supplier.name}">
 		<c:url var="addAction" value="/manage_create_supplier"></c:url>
 		</c:if>
-		<c:if test="${!empty supplier.id}">
+		<c:if test="${!empty supplier.name}">
 		<c:url var="addAction" value="/manage_Update_supplier"></c:url>
 		</c:if>
 	<form:form action="${addAction}" commandName="supplier"  method="post">
@@ -31,10 +31,10 @@
 
 	<c:choose>
 	<c:when test="${not empty supplier.id} ">
-	<td><form:input path="id"  readonly="true" /></td>
+	<td><form:hidden path="id"  readonly="true" /></td>
 	</c:when>
 	<c:otherwise>
-	<td><form:input path="id" pattern=".{5,20}" required="true" title="id should contain 5 to 20 characters" /></td>
+	<td><form:hidden path="id" pattern=".{5,500}" required="true" title="id should contain 5 to 500 characters" /></td>
 	</c:otherwise>
 	</c:choose>
 

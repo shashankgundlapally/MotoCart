@@ -93,11 +93,9 @@
      <li><a href="#">${LoginMessage}</a></li></ul>
     
     
-    </div>
+    
 
-
-
-			<form class="navbar-form navbar-left">
+		<form class="navbar-form navbar-nav">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Search">
 					<div class="input-group-btn">
@@ -113,8 +111,8 @@
 			</div>
 			<div>
 
-				<%-- <c:if test="${empty loginMessage}"> --%>
-                  <% out.println("isAuthenticated()"); %>      
+				
+                      
                      			<ul class="nav navbar-nav navbar-right">
 					<sec:authorize access="!isAuthenticated()">
 					
@@ -124,12 +122,7 @@
 					</ul>
 
 
-			<%-- 	</c:if> --%>
 
-			</div>
-			
-			<div>
-			 
 				
 					<ul class="nav navbar-nav navbar-right">
 					<sec:authorize access="isAuthenticated()">
@@ -139,7 +132,7 @@
 		
 					<li class="nav navbar-nav">
 						<li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-					</li>
+					
 					</sec:authorize>
 	</ul>
 

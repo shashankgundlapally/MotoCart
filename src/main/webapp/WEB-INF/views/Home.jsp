@@ -10,49 +10,52 @@
 
 
 </head>
- <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-	<link rel="stylesheet" href="<c:url value="/resources/Styles/Home.css"/>">
- <script
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="<c:url value="/resources/Styles/Home.css"/>">
+<script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <body>
-<script>
-document.body.style.backgroundImage="url('resources/Images/game.jpg')"
-</script>
-<center>
-<img class="img-circle"  src="<c:url value="/resources/Images/background-5.jpg"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left" > 
-	</center>
-	<div >
+	<script>
+		document.body.style.backgroundImage = "url('resources/Images/game.jpg')"
+	</script>
 	<center>
-		<h2 style="color:green; font-family: fantasy;" >NKART</h2>
-		<h3 style="color:red;font-family:cursive;">Shopping is an art</h3>
-		 
-
-		 ${successMessage}<br> 
-		${role}<br> ${errorMessage}<br>
-		
+		<img class="img-circle"
+			src="<c:url value="/resources/Images/background-5.jpg"></c:url>"
+			alt="ShoppingCartPic" width="100px" height="80px" align="left">
 	</center>
+	<div>
+		<center>
+			<h2 style="color: green; font-family: fantasy;">NKART</h2>
+			<h3 style="color: red; font-family: cursive;">Shopping is an art</h3>
+
+
+		</center>
 	</div>
-	<hr>
 	<c:if test="${isAdmin!=true}">
 		<jsp:include page="menu/CustomerCategoryMenu.jsp"></jsp:include>
+		<jsp:include page="menu/Carousel.jsp"></jsp:include>
 	</c:if>
+	
 
 	<c:if test="${isAdmin==true}">
 		<center>
 			<h2>Hello Admin</h2>
-		
+
 		</center>
 		<%-- <jsp:include page="Admin/AdminHome.jsp"></jsp:include> --%>
 		<jsp:include page="menu/AdminCategoryMenu.jsp"></jsp:include>
 	</c:if>
-
-	<c:if test="${isUserClickedLogin}">
+	<c:if test="${isUserClickedRegistration==true}">
+	<jsp:forward page="Registration.jsp"></jsp:forward>
+	</c:if>
+	<%-- <c:if test="${isUserClickedLogin}">
 		<jsp:include page="Login.jsp"></jsp:include>
 		<br>
-	</c:if>
+	</c:if> --%>
 
 	<c:if test="${not empty errorMessage }">
 		<jsp:include page="Login.jsp"></jsp:include>
@@ -66,7 +69,7 @@ document.body.style.backgroundImage="url('resources/Images/game.jpg')"
 	</c:if>
 
 	<c:if test="${isUserClickedCart == true}">
-	<jsp:include page="Cart.jsp"></jsp:include>
+		<jsp:include page="Cart.jsp"></jsp:include>
 	</c:if>
 
 

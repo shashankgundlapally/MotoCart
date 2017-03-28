@@ -19,10 +19,10 @@
 
 
 		
-	<c:if test="${empty category.id}">
+	<c:if test="${empty category.name}">
 		<c:url var="addAction" value="/manage_create_category"></c:url>
 		</c:if>
-		<c:if test="${!empty category.id}">
+		<c:if test="${!empty category.name}">
 		<c:url var="addAction" value="/manage_Update_category"></c:url>
 		</c:if>
 		
@@ -39,10 +39,10 @@
 
 						<c:choose>
 							<c:when test="${not empty category.id} ">
-								<td><form:input path="id" readonly="true" editable="false"/></td>
+								<td><form:hidden path="id" readonly="true" editable="false"/></td>
 							</c:when>
 							<c:otherwise>
-								<td><form:input path="id" required="true"
+								<td><form:hidden path="id" required="true"
 										title="id should contain 5 to 20 characters" /></td>
 							</c:otherwise>
 						</c:choose>

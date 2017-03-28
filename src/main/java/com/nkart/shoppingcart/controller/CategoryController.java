@@ -14,7 +14,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.nkart.shoppingcart.dao.CategoryDAO;
 import com.nkart.shoppingcart.domain.Category;
-import com.sun.org.apache.bcel.internal.classfile.Attribute;
 
 @Controller
 public class CategoryController {
@@ -50,7 +49,7 @@ public class CategoryController {
 	}
 
 	@GetMapping("/manage_Delete_Category/{id}")
-	public String deleteCategory(@PathVariable("id") String id) {
+	public String deleteCategory(@PathVariable("id") int id) {
 		category.setId(id);
 		categoryDAO.deleteCategory(category);
 
@@ -59,7 +58,7 @@ public class CategoryController {
 	}
 
 	@RequestMapping(value = "/manage_Edit_Category/{id}", method = RequestMethod.GET)
-	public String editCategory(@PathVariable("id") String id, RedirectAttributes attributes) {
+	public String editCategory(@PathVariable("id") int id, RedirectAttributes attributes) {
 		attributes.addFlashAttribute("category", this.categoryDAO.getCategoryById(id));
 		/*attributes.addAttribute("isAdminClickedUpdate", true);*/
 

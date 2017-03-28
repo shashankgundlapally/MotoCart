@@ -14,9 +14,6 @@ body {
 </head>
 <c:url var="back" value="resources/Images/AdminBack.jpg"></c:url>
 <body style=" background-image: url(${back})">
-<script>
-/* document.body.style.backgroundImage="url('resources/Images/AdminBack.jpg')" */
-</script>
 <img class="img-circle"  src="<c:url value="/resources/Images/background-5.jpg"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left" > 
 <center>
 	<%-- <img src="<c:url value="/resources/Images/custom-shopping-cart.png"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left"><br> --%>
