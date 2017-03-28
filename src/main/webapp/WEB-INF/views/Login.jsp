@@ -11,20 +11,19 @@
 </head>
 <body>
 <center>
-<div style="background-color:white;">
-<table style="background-color: white;" height="100px">
+<div>
+<table height="100px">
 <div>
 <h2>This is Login Page</h2>
 
  <form action="perform_login" method="post">
-<tr><td>USER ID:</td><td><input type ="text" name = "j_username" placeholder="User ID" ></td></tr>
+<tr><td>USER NAME:</td><td><input type ="text" name = "j_username" placeholder="User Name" ></td></tr>
 <tr><td>PASSWORD:</td><td><input type ="password" name ="j_password" placeholder="Password"></td></tr>
 <tr><td>LOGIN:<input type ="submit" value="Login"></td><td>&nbsp;&nbsp;&nbsp;&nbsp;RESET:<input type ="Reset" value="reset"></td></tr>
-
  </form>
  </div>
  </table>
- 
+<p>New User?Register Here<a href="create_user" method="post">Register</a></p> 
  </center>
  
  <!-- <div class="login-page">

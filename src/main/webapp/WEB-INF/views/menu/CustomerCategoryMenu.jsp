@@ -18,12 +18,13 @@
 <body>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
+		
 			<div class="navbar-header"></div>
 			<ul class="nav navbar-nav dropdown ">
 				<li><a href="Home"> <span class="glyphicon glyphicon-home"></span>Home
-				</a></li>
+				</a></li></ul>
 
-	 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+	 <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Page 1-1</a></li>
           <li><a href="#">Page 1-2</a></li>
@@ -70,9 +71,29 @@
 
 
 
-			</ul>
+			</ul> -->
 
-
+<ul class="nav navbar-nav">
+     <li><a href="#">CATEGORIES  <span class="glyphicon glyphicon-hand-right"></span></a></li>
+        </ul>
+ 
+ 	<ul class="nav navbar-nav" role="tablist">
+ 	<c:forEach items="${categoryList}" var="category">
+ 	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${category.name}<span class="caret"></span></a>
+ 	
+ 	<ul class="dropdown-menu" role="menu">
+ 	<c:forEach items="${category.products}" var="product">
+ 	<li><a href="manage_Products/get/${product.id}">${product.name}</a></li>
+ 	</c:forEach>
+ 	</ul></li>
+ 	</c:forEach>
+ 	</ul>
+ 	
+        <ul class="nav navbar-nav navbar-right">
+     <li><a href="#">${LoginMessage}</a></li></ul>
+    
+    
+    </div>
 
 
 
@@ -109,23 +130,21 @@
 			
 			<div>
 			 
-				<%-- <c:if test="${not empty loginMessage}"> --%>
+				
 					<ul class="nav navbar-nav navbar-right">
 					<sec:authorize access="isAuthenticated()">
 						<li><a href="perform_logout"><span
 								class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 				
-				<%-- </c:if> --%>
-
-				<%-- <c:if test="${isAdmin==false}"> --%>
-					<li class="nav navbar-nav navbar-right">
+		
+					<li class="nav navbar-nav">
 						<li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 					</li>
 					</sec:authorize>
 	</ul>
 
 
-		<%-- 		</c:if> --%>
+		
 
 
 			</div>

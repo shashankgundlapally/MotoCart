@@ -19,12 +19,12 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <body>
 <script>
-document.body.style.backgroundImage="url('resources/Images/matrix4.jpg')"
+document.body.style.backgroundImage="url('resources/Images/game.jpg')"
 </script>
 <center>
 <img class="img-circle"  src="<c:url value="/resources/Images/background-5.jpg"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left" > 
 	</center>
-	<div  style="background-color: white;">
+	<div >
 	<center>
 		<h2 style="color:green; font-family: fantasy;" >NKART</h2>
 		<h3 style="color:red;font-family:cursive;">Shopping is an art</h3>

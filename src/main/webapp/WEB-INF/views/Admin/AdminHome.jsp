@@ -8,13 +8,14 @@
 <title>This is Admin Page</title>
 <style>
 body {
-    background-image: url("resources/Images/background-1.jpg");
+    background-image: url("resources/Images/AdminBack.jpg");
 }
 </style>
 </head>
-<body>
+<c:url var="back" value="resources/Images/AdminBack.jpg"></c:url>
+<body style=" background-image: url(${back})">
 <script>
-document.body.style.backgroundImage="url('resources/Images/blue_background.jpg')"
+/* document.body.style.backgroundImage="url('resources/Images/AdminBack.jpg')" */
 </script>
 <img class="img-circle"  src="<c:url value="/resources/Images/background-5.jpg"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left" > 
 <center>
@@ -23,7 +24,7 @@ document.body.style.backgroundImage="url('resources/Images/blue_background.jpg')
 		<h3 style="color:red;font-family:cursive;">Shopping is an art</h3>
 		</center><br>
 
-	<c:if test="${isUserClickedAdminHome==true}">
+	<c:if test="${isClickedAdminHome==true}">
 	
 	<jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include>
 	</c:if>
@@ -31,17 +32,17 @@ document.body.style.backgroundImage="url('resources/Images/blue_background.jpg')
 <%-- <c:if test="${isUserClickedCategories==true||isUserClickedProducts==true||isUserClickedSuppliers==true}">
 <jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include>
 </c:if> --%>
-	<c:if test="${isUserClickedCategories==true}">
+	<c:if test="${isAdminClickedCategories==true}">
 <%-- 	<jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include> --%>
 		<jsp:include page="Category.jsp"></jsp:include>
 	</c:if>
 
-	<c:if test="${isUserClickedProducts==true}">
+	<c:if test="${isAdminClickedProducts==true}">
 	<%-- <jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include> --%>
 		<jsp:include page="Product.jsp"></jsp:include>
 	</c:if>
 
-	<c:if test="${isUserClickedSuppliers==true}">
+	<c:if test="${isAdminClickedSuppliers==true}">
 <%-- 	<jsp:include page="../menu/AdminCategoryMenu.jsp"></jsp:include>
  --%>		<jsp:include page="Supplier.jsp"></jsp:include>
 	</c:if>
