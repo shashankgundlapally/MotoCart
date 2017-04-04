@@ -16,9 +16,11 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-		
+		<div class="navbar-header">
+      <a style="color: red" class="navbar-brand" href="#">MotoCart</a>
+    </div>
 			<div class="navbar-header"></div>
 			<ul class="nav navbar-nav dropdown ">
 				<li><a href="Home"> <span class="glyphicon glyphicon-home"></span>Home
@@ -131,7 +133,7 @@
 				
 		
 					<li class="nav navbar-nav">
-						<li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+						<li><a href="Cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 					
 					</sec:authorize>
 	</ul>

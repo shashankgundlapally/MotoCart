@@ -7,7 +7,7 @@
 
 	<welcome-file-list>
 
-		<welcome-file>Home.jsp</welcome-file>
+		<welcome-file>/WEB-INF/views/Home.jsp</welcome-file>
 
 	</welcome-file-list>
 
@@ -38,10 +38,10 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
+	<!-- <servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>*.obj</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 
 
 

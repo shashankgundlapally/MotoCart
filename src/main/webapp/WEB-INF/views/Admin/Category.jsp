@@ -33,28 +33,28 @@
 
 					<tr>
 
-						<td><form:label path="id">
+						<td style="color: red"><form:label path="id">
 								<spring:message text="Id" />
 							</form:label></td>
 
 						<c:choose>
 							<c:when test="${not empty category.id} ">
-								<td><form:hidden path="id" readonly="true" editable="false"/></td>
+								<td style="color: red"><form:hidden path="id" readonly="true" editable="false"/></td>
 							</c:when>
 							<c:otherwise>
-								<td><form:hidden path="id" required="true"
+								<td style="color: red"><form:hidden path="id" required="true"
 										title="id should contain 5 to 20 characters" /></td>
 							</c:otherwise>
 						</c:choose>
 					<tr>
-						<td><form:label path="name">
+						<td style="color: red"><form:label path="name">
 								<spring:message text="Name" />
 							</form:label></td>
 						<td><form:input path="name" required="true" /></td>
 					</tr>
 
 					<tr>
-						<td><form:label path="description">
+						<td style="color: red"><form:label path="description">
 								<spring:message text="Description" />
 							</form:label></td>
 						<td><form:input path="description" required="true" /></td>
@@ -82,10 +82,10 @@
 			<table class="tg" border="2">
 				<thead>
 					<tr>
-						<td>ID</td>
-						<td>NAME</td>
-						<td>DESCRIPTION</td>
-						<td>Action</td>
+						<td style="color: white">ID</td>
+						<td style="color: white">NAME</td>
+						<td style="color: white">DESCRIPTION</td>
+						<td style="color: white">Action</td>
 					</tr>
 				</thead>
 
@@ -95,11 +95,11 @@
 				<c:forEach var="category" items="${categoryList}">
 
 					<tr>
-						<td>${category.id}</td>
-						<td>${category.name}</td>
-						<td>${category.description}</td>
+						<td style="color: white">${category.id}</td>
+						<td style="color: white">${category.name}</td>
+						<td style="color: white">${category.description}</td>
 
-						<td><a href="manage_Edit_Category/${category.id}">Edit </a>||
+						<td style="color: white"><a href="manage_Edit_Category/${category.id}">Edit </a>||
 							<a href="manage_Delete_Category/${category.id}">Delete</a></td>
 					</tr>
 

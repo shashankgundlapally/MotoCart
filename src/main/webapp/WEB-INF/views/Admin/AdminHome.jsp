@@ -8,17 +8,17 @@
 <title>This is Admin Page</title>
 <style>
 body {
-    background-image: url("resources/Images/AdminBack.jpg");
+    background-image: url("resources/images/AdminBack.jpg");
 }
 </style>
 </head>
-<c:url var="back" value="resources/Images/AdminBack.jpg"></c:url>
+<c:url var="back" value="resources/images/AdminBack.jpg"></c:url>
 <body style=" background-image: url(${back})">
-<img class="img-circle"  src="<c:url value="/resources/Images/background-5.jpg"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left" > 
+<img class="img-circle"  src="<c:url value="/resources/images/CARlogo1.jpg"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left" > 
 <center>
-	<%-- <img src="<c:url value="/resources/Images/custom-shopping-cart.png"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left"><br> --%>
-		<h2 style="color:green; font-family: fantasy;">NKART</h2>
-		<h3 style="color:red;font-family:cursive;">Shopping is an art</h3>
+	<%-- <img src="<c:url value="resources/images/custom-shopping-cart.png"></c:url>" alt="ShoppingCartPic" width="100px" height="100px" align="left"><br> --%>
+		<h2 style="color:green; font-family: fantasy;">Moto Cart</h2>
+		<h3 style="color:red;font-family:cursive;">Deals like never before</h3>
 		</center><br>
 
 	<c:if test="${isClickedAdminHome==true}">

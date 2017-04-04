@@ -11,7 +11,7 @@
 </head>
 <body>
 	<center>
-		<h2>Enter Supplier Details</h2>
+		<h2 style="color:white" >Enter Supplier Details</h2>
 		
 		
 		<c:if test="${empty supplier.name}">
@@ -27,32 +27,32 @@
 
 <tr>
 
-<td><form:label path="id"><spring:message text="Id" /></form:label></td>
+<td style="color:white"><form:label path="id"><spring:message text="Id" /></form:label></td>
 
 	<c:choose>
 	<c:when test="${not empty supplier.id} ">
-	<td><form:hidden path="id"  readonly="true" /></td>
+	<td style="color:white"><form:hidden path="id"  readonly="true" /></td>
 	</c:when>
 	<c:otherwise>
-	<td><form:hidden path="id" pattern=".{5,500}" required="true" title="id should contain 5 to 500 characters" /></td>
+	<td  style="color:white" ><form:hidden path="id" pattern=".{5,500}" required="true" title="id should contain 5 to 500 characters" /></td>
 	</c:otherwise>
 	</c:choose>
 
 <tr>
-<td><form:label path="name"><spring:message text="Name" /></form:label></td>
-<td><form:input path="name" required="true" /></td>
+<td  style="color:white"><form:label path="name"><spring:message text="Name" /></form:label></td>
+<td   style="color:white"><form:input path="name" required="true" /></td>
 </tr>
 
 <tr>
-<td><form:label path="address"> <spring:message text="Address"/></form:label></td>
-<td><form:input path="address" required="true" /></td>
+<td  style="color:white"><form:label path="address"> <spring:message text="Address"/></form:label></td>
+<td  style="color:white"><form:input path="address" required="true" /></td>
 </tr>
 			
 <tr>
-<td colspan="2"><c:if test="${!empty supplier.name}"><input type="submit" value="<spring:message text="Update"/>" />
+<td   style="color:white" colspan="2"><c:if test="${!empty supplier.name}"><input type="submit" value="<spring:message text="Update"/>" />
 	</c:if>
 	<c:if test="${empty supplier.name}">
-	<input type="submit" value="<spring:message text="Create"/>" />
+	<input  style="color:black" type="submit" value="<spring:message text="Create"/>" />
 	</c:if>
 	</td>
 	</tr>
@@ -62,22 +62,22 @@
 	</center>
 
 	<center>
-		<h2>Suppliers</h2>
+		<h2 style="color:white">Suppliers</h2>
 		<table border="2">
 			<thead>
 				<tr>
-					<td>ID</td>
-					<td>NAME</td>
-					<td>ADDRESS</td>
-					<td>ACTION</td>
+					<td style="color:white">ID</td>
+					<td style="color:white">NAME</td>
+					<td style="color:white">ADDRESS</td>
+					<td style="color:white">ACTION</td>
 				</tr>
 			</thead>
 			<c:forEach var="supplier" items="${supplierList}">
 				<tr>
-					<td>${supplier.id}</td>
-					<td>${supplier.name}</td>
-					<td>${supplier.address}</td>
-					<td><a href="<c:url value='/manage_Edit_Supplier/${supplier.id}' />">Edit </a>|| <a
+					<td style="color:white" >${supplier.id}</td>
+					<td  style="color:white">${supplier.name}</td>
+					<td  style="color:white">${supplier.address}</td>
+					<td  style="color:white"><a href="<c:url value='/manage_Edit_Supplier/${supplier.id}' />">Edit </a>|| <a
 						href="<c:url value='/manage_Delete_Supplier/${supplier.id}' />">Delete</a></td>
 					<td>
 				</tr>

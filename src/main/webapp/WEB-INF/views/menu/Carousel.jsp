@@ -21,7 +21,7 @@
 
 <div class="container">
   <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" width="700" height="300">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -36,50 +36,53 @@
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
-        <img src="resources/Images/carosel1.jpg" alt="Lie of Pi" width="460" height="345">
+        <img src="resources\images\carosel1.jpg" alt="car" width="460" height="345">
         <div class="carousel-caption">
-          <h3>Life of Pi</h3>
-          <p>Pi Patel finds a way to survive in a lifeboat that is adrift in the middle of nowhere. His fight against the odds is heightened by the company of a hyena and a male Bengal tiger.</p>
+          <h3>Which brand are You Looking For in a Car?</h3>
+          <p>  </p>
         </div>
       </div>
 
       <div class="item">
-        <img src="resources/Images/carosel2.jpg" alt="Captain America:Civil War" width="460" height="345">
+        <img src="resources\images\carosel2.jpg" alt="choosing the right car" width="460" height="345">
         <div class="carousel-caption">
-          <h3>Captain America:Civil War</h3>
-          <p>Political pressure mounts to install a system of accountability when the actions of the Avengers lead to collateral damage. The new status quo deeply divides members of the team. Captain America (Chris Evans) believes superheroes should remain free to defend humanity without government interference. Iron Man (Robert Downey Jr.) sharply disagrees and supports oversight. As the debate escalates into an all-out feud, Black Widow (Scarlett Johansson) and Hawkeye (Jeremy Renner) must pick a side.</p>
+          <h3>choosing the right car</h3>
+          <p> </p>
         </div>
       </div>
     
       <div class="item">
-        <img src="resources/Images/carosel4.jpg" alt="Bahubali:The Beginning" width="460" height="345">
+        <img src="resources\images\carosel3.jpg" alt="Ask yourself what you need by way of performance, space, etc." width="460" height="345">
         <div class="carousel-caption">
-          <h3>Bahubali:The Beginning </h3>
-          <p>In the kingdom of Mahishmati, while pursuing his love, Shivudu learns about the conflict-ridden past of his family and his legacy. He must now prepare himself to face his new-found archenemy.</p>
+          <h3>Ask yourself what you need by way of performance, space, etc. </h3>
+          <p> </p>
         </div>
       </div>
 
+
+<div class="item">
+        <img src="resources\images\carosel4.jpg" alt="Check your budget. " width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Check your budget.  </h3>
+          <p> </p>
+        </div>
+      </div> 
+      
       <div class="item">
-        <img src="resources/Images/carosel5.jpg" alt="Rise of The Tomb Raider" width="460" height="345">
+        <img src="resources\images\carosel5.jpg" alt="Consider fuel efficiency" width="460" height="345">
         <div class="carousel-caption">
-          <h3>Rise of The Tomb Raider</h3>
-          <p>Rise of the Tomb Raider is an action-adventure video game developed by Crystal Dynamics and published by Square Enix. It is the sequel to the 2013 video game Tomb Raider, a reboot of the Tomb Raider franchise.</p>
+          <h3>Consider fuel efficiency</h3>
+          <p> </p>
         </div>
+        
       </div>
        <div class="item">
-        <img src="resources/Images/carosel6.jpg" alt="Assassin's Creed II" width="460" height="345">
+        <img src="resources\images\carosel6.jpg" alt="Check with family members who might be using the car. " width="460" height="345">
         <div class="carousel-caption">
-          <h3>Assassin's Creed II</h3>
-          <p>Assassin's Creed II is a 2009 action-adventure video game developed by Ubisoft Montreal and published by Ubisoft.</p>
+          <h3>Check with family members who might be using the car. </h3>
+          <p></p>
         </div>
-      </div>
-       <div class="item">
-        <img src="resources/Images/carosel7.jpg" alt="Hitman" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Hitman</h3>
-          <p>Hitman is an episodic stealth video game developed by IO Interactive and published by Square Enix for Microsoft Windows, PlayStation 4, and Xbox One. A port for Linux, developed and published by Feral Interactive, was released on 16 February 2017</p>
-        </div>
-      </div>
+      
   
     </div>
 

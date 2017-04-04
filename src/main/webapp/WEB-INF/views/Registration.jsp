@@ -20,22 +20,22 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <body>
-<c:url var="back" value="resources/Images/Login.jpg"></c:url>
+<c:url var="back" value="resources/images/Login.jpg"></c:url>
 <body style=" background-image: url(${back})">
 	<center>
 		<img class="img-circle"
-			src="<c:url value="/resources/Images/background-5.jpg"></c:url>"
+			src="<c:url value="resources/images/CARlogo1.jpg"></c:url>"
 			alt="ShoppingCartPic" width="100px" height="80px" align="left">
 	</center>
 	<div>
 		<center>
-			<h2 style="color: green; font-family: fantasy;">NKART</h2>
-			<h3 style="color: red; font-family: cursive;">Shopping is an art</h3>
+			<h2 style="color:white; font-family: fantasy;"> Moto Cart </h2>
+			<h3 style="color:white; font-family: cursive;"> Deals like never before </h3>
 		</center>
 	</div>
 	<jsp:include page="menu/CustomerCategoryMenu.jsp"></jsp:include>
 <center>
-<h2>Please Register</h2>
+<h2 style="color: white" > Register here </h2>
 </center>
 
 <c:url var="action" value="Registration"></c:url>
@@ -46,24 +46,24 @@
 	
 	<div class="input-group margin-bottom-sm">
 	<table>
-			<tr><td><form:label path="name"><spring:message text="Name" /></form:label></td>
+			<tr style="color: white" ><td><form:label path="name"><spring:message text="Name" /></form:label></td>
 			<td><form:input path="name" required="true" /></td></tr>
 		
 
 
 		
-			<tr><td><form:label path="password"><spring:message text="Password" /></form:label></td>
+			<tr style="color: white" ><td><form:label path="password"><spring:message text="Password" /></form:label></td>
 			<td><form:input path="password" required="true" /></td></tr>
 		
 		
 		
-		<tr><td><form:label path="contact"><spring:message text="Contact" /></form:label></td>
-		<td><form:input path="contact" required="true" /></td></tr>
+		<tr style="color: white" ><td><form:label path="contact"><spring:message text="Contact" /></form:label></td>
+		<td  style="color: white" ><form:input path="contact" required="true" /></td></tr>
 		
 		
 		
-		<tr><td><form:label path="email"><spring:message text="E-mail" /></form:label></td>
-		<td><form:input path="email" required="true" /></td></tr>
+		<tr  style="color: white"><td><form:label path="email"><spring:message text="E-mail" /></form:label></td>
+		<td  style="color: white" ><form:input path="email" required="true" /></td></tr>
 		</table>
 		</div>
 		

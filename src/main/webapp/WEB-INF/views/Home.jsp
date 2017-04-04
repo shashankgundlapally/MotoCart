@@ -4,9 +4,11 @@
 <html>
 <head>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+      <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>NKART Home Page</title>
+<title> Moto Cart </title>
 
 
 </head>
@@ -20,17 +22,17 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <body>
 	<script>
-		document.body.style.backgroundImage = "url('resources/Images/game.jpg')"
+		document.body.style.backgroundImage = "url('resources/images/game.jpg')"
 	</script>
 	<center>
 		<img class="img-circle"
-			src="<c:url value="/resources/Images/background-5.jpg"></c:url>"
+			src="<c:url value="resources/images/CARlogo1.jpg"></c:url>"
 			alt="ShoppingCartPic" width="100px" height="80px" align="left">
-	</center>
+	</center> 
 	<div>
 		<center>
-			<h2 style="color: green; font-family: fantasy;">NKART</h2>
-			<h3 style="color: red; font-family: cursive;">Shopping is an art</h3>
+			<h2 style="color: white;font-style: italic;" align="right"> Moto Cart </h2>
+			<h3 style="color: white; font-family: cursive;"align="right">Deals  like  never before </h3>
 
 
 		</center>
@@ -43,7 +45,7 @@
 
 	<c:if test="${isAdmin==true}">
 		<center>
-			<h2>Hello Admin</h2>
+			<h2> Welcome Admin</h2>
 
 		</center>
 		<%-- <jsp:include page="Admin/AdminHome.jsp"></jsp:include> --%>
@@ -71,8 +73,32 @@
 	<c:if test="${isUserClickedCart == true}">
 		<jsp:include page="Cart.jsp"></jsp:include>
 	</c:if>
+	<c:forEach items="${productList}" var="product">
+			<tr>
 
 
+				<td>
+					<!-- --<div class="thumbnail">-->
+					<div class="col-md-4">
+						<a href="ShowProduct/${product.id}"> <img height="150px"
+							width="150px" alt="${product.id }"
+							src="<c:url value="resources/images/${product.id }.jpg"></c:url>"></a>
+
+						<td><c:url var="action" value="addtoCart/${userid}/${product.id}"></c:url>
+							<form:form action="${action}" modelAttribute="cart">
+								<td id="td1"><c:out value="${product.name}" /><br>
+								<td id="td1"><c:out value="${product.price}" /> <input
+									type="submit" class="btn btn-primary" value="Add To Cart" /><br>
+							</form:form></td>
+						<br>
+
+					</div>
+			
+			</td>
+			</tr>
+		</c:forEach>
+
+<jsp:include page="Footer.jsp"></jsp:include>
 
 </body>
 </html>
