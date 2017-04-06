@@ -22,27 +22,18 @@
 	<c:url var="back" value="resources/images/Login.jpg"></c:url>
 <body style=" background-image: url(${back})">
 
-	<center>
-		<img class="img-circle"
-			src="<c:url value="resources/images/CARlogo1.jpg"></c:url>"
-			alt="ShoppingCartPic" width="100px" height="80px" align="left">
-	</center>
-	<div>
-		<center>
-			<h2 style="color: white; font-family: fantasy;" align="right" > Moto Cart </h2>
-			<h3 style="color: red; font-family: cursive;"  align="right" > Deals like never before </h3>
-		</center>
+	
 	</div>
 	<jsp:include page="menu/CustomerCategoryMenu.jsp"></jsp:include>
 <center>
-<div>
+<div style="color: white"> 
 <h2 style="font-size: 40px; color:cyan">Login to the Automobile World</h2>
 
 <form action="perform_login" method="post" id="login">
 <table height="100px">
-<tr><td>USER NAME:</td><td><input type ="text" name = "j_username" placeholder="User Name" ></td></tr>
-<tr><td>PASSWORD:</td><td><input type ="password" name ="j_password" placeholder="Password"></td></tr>
-<tr><td>LOGIN:<input type ="submit" value="Login"></td><td>&nbsp;&nbsp;&nbsp;&nbsp;RESET:<input type ="Reset" value="reset"></td></tr>
+<tr><td  >USER NAME:</td><td><input type ="text" name = "j_username" placeholder="User Name" ></td></tr>
+<tr><td>PASSWORD:</td><td><input type ="text" name ="j_password" placeholder="Password"></td></tr>
+<tr><td >LOGIN:<input type ="submit" value="Login"></td><td>&nbsp;&nbsp;&nbsp;&nbsp;RESET:<input type ="Reset" value="reset"></td></tr>
 
 </table>
 </form> 

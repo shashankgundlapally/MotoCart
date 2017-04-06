@@ -19,6 +19,11 @@
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 		<div class="navbar-header">
+	
+		<img class="img-circle"
+			src="<c:url value="resources/images/CARlogo1.jpg"></c:url>"
+			alt="ShoppingCartPic" width="100px" height="80px" align="left">
+	
       <a style="color: red" class="navbar-brand" href="#">MotoCart</a>
     </div>
 			<div class="navbar-header"></div>
@@ -81,13 +86,9 @@
  
  	<ul class="nav navbar-nav" role="tablist">
  	<c:forEach items="${categoryList}" var="category">
- 	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${category.name}<span class="caret"></span></a>
+ 	<li class="dropdown"><a class="dropdown-toggle"  href="navproducts/${category.id}">${category.name}</a>
  	
- 	<ul class="dropdown-menu" role="menu">
- 	<c:forEach items="${category.products}" var="product">
- 	<li><a href="manage_Products/get/${product.id}">${product.name}</a></li>
- 	</c:forEach>
- 	</ul></li>
+ 	</li>
  	</c:forEach>
  	</ul>
  	

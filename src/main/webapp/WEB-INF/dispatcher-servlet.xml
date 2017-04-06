@@ -33,7 +33,7 @@
 	</bean>
 	
 
-	
+	<import resource="webflow-config.xml" />
 
 </beans>
 

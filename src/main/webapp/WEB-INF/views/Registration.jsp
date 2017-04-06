@@ -22,16 +22,7 @@
 <body>
 <c:url var="back" value="resources/images/Login.jpg"></c:url>
 <body style=" background-image: url(${back})">
-	<center>
-		<img class="img-circle"
-			src="<c:url value="resources/images/CARlogo1.jpg"></c:url>"
-			alt="ShoppingCartPic" width="100px" height="80px" align="left">
-	</center>
-	<div>
-		<center>
-			<h2 style="color:white; font-family: fantasy;"> Moto Cart </h2>
-			<h3 style="color:white; font-family: cursive;"> Deals like never before </h3>
-		</center>
+	
 	</div>
 	<jsp:include page="menu/CustomerCategoryMenu.jsp"></jsp:include>
 <center>
